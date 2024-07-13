@@ -18,7 +18,7 @@ import { Component } from "@angular/core";
 
 export class NavbarComponent {
 
-    
+    navTitle :string = "Foodies"; 
 
     constructor() {
         // console.log("Navbar component");

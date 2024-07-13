@@ -1,0 +1,63 @@
+<div class="container" style="margin-top: 20px;">
+    <input 
+    placeholder="Search..." 
+    [(ngModel)]="search" 
+    class="form-control" 
+    type="text" 
+    id="" 
+    style="border: 1px solid black;" 
+    >
+    <!-- <input 
+    placeholder="Search..." 
+    (input)="onSearch($event)"    
+    class="form-control" 
+    type="text" 
+    id="" 
+    style="border: 1px solid black;" 
+    > -->
+    <p>{{search}}</p>
+
+    <div class="products">
+        <div *ngIf="products.length===0">
+            <!-- No Products -->
+             <h1 style="text-align: center;">No product</h1>
+        </div>
+        <div class="card" *ngFor="let product of products" style="width: 18rem;">
+            <img 
+            [src]="product.image" 
+            class="card-img-top" 
+            [alt]="product.productName">
+            <div class="card-body">
+              <h5 class="card-title">{{product['productName']}}</h5>
+              <p class="card-text">{{product['description']}}</p>
+
+              <p>Rs:<strong>{{product.price}}</strong></p>
+              
+              <div style="margin-bottom: 5px;">
+                <span
+                 class="badge bg-primary">{{product.category}}</span>
+              </div>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+
+    .card img{
+        height: 200px;
+        object-fit: contain;
+    }
+    
+    .products{
+        display: grid;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(33%, 1fr));
+    gap:5px;
+    /* justify-content: space-between; */
+    
+    }
+
+</style>
