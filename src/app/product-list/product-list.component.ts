@@ -10,6 +10,15 @@ export class ProductListComponent implements OnInit {
 
   search : string = "";
 
+  
+
+  // Passing Css to template
+  styles  = {
+    width: '18rem',
+    'box-shadow': 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+    'margin-top': '10px'
+  };
+
   products: Product[] = [
     {
       productName : "Iphone",
@@ -65,7 +74,15 @@ export class ProductListComponent implements OnInit {
 
   onSearch(event : any){
     console.log(event.target.value);
-    this.search = event.target.value;
+    // this.search = event.target.value;
   }
 
+  checkProducts(){
+    return this.products.length === 0;
+  }
+
+  checkProductPrice(price: number){    
+    return price <= 40000
+  }
+  
 }

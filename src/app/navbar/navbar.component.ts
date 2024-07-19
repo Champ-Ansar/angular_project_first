@@ -19,6 +19,7 @@ import { Component } from "@angular/core";
 export class NavbarComponent {
 
     navTitle :string = "Foodies"; 
+    navbarColor : string = "#2A55E5"
 
     constructor() {
         // console.log("Navbar component");
@@ -30,4 +31,22 @@ export class NavbarComponent {
         
 
     }
+
+    checkBlue(){
+        console.log(this.navbarColor === "#2A55E5");
+        
+        return this.navbarColor === "#2A55E5"; 
+    }
+    
+    checkDark(){
+        console.log(this.navbarColor === "black");
+        return this.navbarColor === "black";
+    }
+
+    onClickToggle(){
+        this.navbarColor = this.navbarColor === "#2A55E5" ? "black" : "#2A55E5";
+    }
+
+
+    
 }

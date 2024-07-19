@@ -18,11 +18,11 @@
     <p>{{search}}</p>
 
     <div class="products">
-        <div *ngIf="products.length===0">
+        <div *ngIf="checkProducts()">
             <!-- No Products -->
-             <h1 style="text-align: center;">No product</h1>
+             <h1 style="text-align: center;">No products Available</h1>
         </div>
-        <div class="card" *ngFor="let product of products" style="width: 18rem;">
+        <div class="card" *ngFor="let product of products" [ngStyle]="styles" >
             <img 
             [src]="product.image" 
             class="card-img-top" 
@@ -31,7 +31,7 @@
               <h5 class="card-title">{{product['productName']}}</h5>
               <p class="card-text">{{product['description']}}</p>
 
-              <p>Rs:<strong>{{product.price}}</strong></p>
+              <p [ngClass]="{costly: product.price <= 40000}" >Rs:<strong>{{product.price}}</strong></p>
               
               <div style="margin-bottom: 5px;">
                 <span
@@ -58,6 +58,10 @@
     gap:5px;
     /* justify-content: space-between; */
     
+    }
+
+    .costly{
+      color: red;
     }
 
 </style>
