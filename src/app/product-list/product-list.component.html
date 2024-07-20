@@ -1,12 +1,31 @@
 <div class="container" style="margin-top: 20px;">
-    <input 
-    placeholder="Search..." 
-    [(ngModel)]="search" 
-    class="form-control" 
-    type="text" 
-    id="" 
-    style="border: 1px solid black;" 
-    >
+
+
+    <p style="margin-bottom: 10px;">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            Add new Product
+        </button>
+    </p>
+    <div class="collapse" id="collapseExample" style="margin-bottom: 10px;" >
+        <div class="card card-body">
+            <form >
+                <label for="product-input">Product Name</label>
+                <input name="product-name" [(ngModel)]="newProduct.productName" id="product-input" required type="text" class="form-control">
+                <label for="product-input">Description</label>
+                <input name="product-description" [(ngModel)]="newProduct.description" id="product-input" required type="text" class="form-control">
+
+                <label for="product-input">Price</label>
+                <input name="product-description" [(ngModel)]="newProduct.price" id="product-description" required type="number" class="form-control">
+
+                <button class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+            </form>
+            {{newProduct | json}}
+        </div>
+    </div>
+
+    <input placeholder="Search..." [(ngModel)]="search" class="form-control" type="text" id=""
+        style="border: 1px solid black;">
     <!-- <input 
     placeholder="Search..." 
     (input)="onSearch($event)"    
@@ -15,53 +34,48 @@
     id="" 
     style="border: 1px solid black;" 
     > -->
+
     <p>{{search}}</p>
 
     <div class="products">
         <div *ngIf="checkProducts()">
             <!-- No Products -->
-             <h1 style="text-align: center;">No products Available</h1>
+            <h1 style="text-align: center;">No products Available</h1>
         </div>
-        <div class="card" *ngFor="let product of products" [ngStyle]="styles" >
-            <img 
-            [src]="product.image" 
-            class="card-img-top" 
-            [alt]="product.productName">
+        <div class="card" *ngFor="let product of products" [ngStyle]="styles">
+            <img [src]="product.image" class="card-img-top" [alt]="product.productName">
             <div class="card-body">
-              <h5 class="card-title">{{product['productName']}}</h5>
-              <p class="card-text">{{product['description']}}</p>
+                <h5 class="card-title">{{product['productName']}}</h5>
+                <p class="card-text">{{product['description']}}</p>
 
-              <p [ngClass]="{costly: product.price <= 40000}" >Rs:<strong>{{product.price}}</strong></p>
-              
-              <div style="margin-bottom: 5px;">
-                <span
-                 class="badge bg-primary">{{product.category}}</span>
-              </div>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p [ngClass]="{costly: product.price <= 40000}">Rs:<strong>{{product.price}}</strong></p>
+
+                <div style="margin-bottom: 5px;">
+                    <span class="badge bg-primary">{{product.category}}</span>
+                </div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        
+
     </div>
 </div>
 
 <style>
-
-    .card img{
+    .card img {
         height: 200px;
         object-fit: contain;
     }
-    
-    .products{
+
+    .products {
         display: grid;
-    grid-template-columns: 
-        repeat(auto-fit, minmax(33%, 1fr));
-    gap:5px;
-    /* justify-content: space-between; */
-    
+        grid-template-columns:
+            repeat(auto-fit, minmax(33%, 1fr));
+        gap: 5px;
+        /* justify-content: space-between; */
+
     }
 
-    .costly{
-      color: red;
+    .costly {
+        color: red;
     }
-
 </style>

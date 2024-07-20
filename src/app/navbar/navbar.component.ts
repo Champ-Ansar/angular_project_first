@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'app-navbar',
@@ -20,7 +20,7 @@ export class NavbarComponent {
 
     navTitle :string = "Foodies"; 
     navbarColor : string = "#2A55E5"
-
+    @Input('counter') count!: number ;
     constructor() {
         // console.log("Navbar component");
         // const name = "Ansar";
@@ -31,15 +31,18 @@ export class NavbarComponent {
         
 
     }
-
+ngDoChanges(){
+    console.log(this.count);
+    
+}
     checkBlue(){
-        console.log(this.navbarColor === "#2A55E5");
+        // console.log(this.navbarColor === "#2A55E5");
         
         return this.navbarColor === "#2A55E5"; 
     }
     
     checkDark(){
-        console.log(this.navbarColor === "black");
+        // console.log(this.navbarColor === "black");
         return this.navbarColor === "black";
     }
 
