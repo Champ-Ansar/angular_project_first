@@ -10,8 +10,6 @@ export class ProductListComponent implements OnInit {
 
   search : string = "";
 
-  
-
   // Passing Css to template
   styles  = {
     width: '18rem',
@@ -21,14 +19,21 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [
     {
-      productName : "Iphone",
+      productName : "iphone",
       description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
       price: 100000,
       category: "Electronics",
       image: "../../assets/images/iphone.jpeg",
     },
     {
-      productName : "Samsung",
+      productName : "iphone 14",
+      description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
+      price: 150000,
+      category: "Electronics",
+      image: "../../assets/images/iphone.jpeg",
+    },
+    {
+      productName : "samsung",
       description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
       price: 80000,
       category: "Electronics",
@@ -42,7 +47,7 @@ export class ProductListComponent implements OnInit {
       image: "../../assets/images/tv.jpeg",
     },
     {
-      productName : "Tv",
+      productName : "lg tv",
       description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
       price: 40000,
       category: "Electronics",
@@ -50,14 +55,14 @@ export class ProductListComponent implements OnInit {
     },
   ];
 
-  // iphone : Product = {
-  //   productName : "Iphone",
-  //   description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
-  //   price: 100000,
-  //   category: "Electronics",
-  //   image: "../../assets/images/iphone.jpeg",
-  //   // types: "costly"
-  // };
+  iphone : Product = {
+    productName : "Iphone",
+    description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",
+    price: 100000,
+    category: "Electronics",
+    image: "../../assets/images/iphone.jpeg",
+    // types: "costly"
+  };
   //  samsungS23: Product = {
   //   productName : "Samsung",
   //   description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quibusdam!",

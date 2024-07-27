@@ -20,8 +20,11 @@ export class NavbarComponent {
 
     navTitle :string = "Foodies"; 
     navbarColor : string = "#2A55E5"
+    currDate = new Date();
 
     constructor() {
+        // console.log(this.currDate);
+        
         // console.log("Navbar component");
         // const name = "Ansar";
         // const greet = `Welcome to Itvedant, ${name}`;

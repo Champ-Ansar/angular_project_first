@@ -6,13 +6,17 @@ import { PracticeComponent } from './practice/practice.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
+import { CustomPipePipe } from './custom-pipe.pipe';
+import { SearchProductsPipe } from './search-products.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PracticeComponent,
     NavbarComponent,
-    ProductListComponent
+    ProductListComponent,
+    CustomPipePipe,
+    SearchProductsPipe
   ],
   imports: [
     BrowserModule,

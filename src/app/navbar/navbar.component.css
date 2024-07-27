@@ -2,3 +2,19 @@ nav{
     /* background: #2A55E5; */
     color: white;
 }
+
+.nav-item a{
+    color: white ;
+  }
+
+  .navbar-brand{
+    color: white ;
+
+  }
+
+  .dark{
+    background: black;
+  }
+  .bluebg{
+    background-color: #2A55E5;
+  }
