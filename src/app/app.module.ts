@@ -8,6 +8,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { CustomPipePipe } from './custom-pipe.pipe';
 import { SearchProductsPipe } from './search-products.pipe';
+import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchProductsPipe } from './search-products.pipe';
     NavbarComponent,
     ProductListComponent,
     CustomPipePipe,
-    SearchProductsPipe
+    SearchProductsPipe,
+    AddNewProductComponent
   ],
   imports: [
     BrowserModule,

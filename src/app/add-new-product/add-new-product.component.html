@@ -1,0 +1,27 @@
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Add New Product
+    </a>
+</p>
+<div class="collapse" id="collapseExample" style="border: 1px solid rgb(201, 200, 200); margin: 10px ; padding: 10px; border-radius: 10px;" >
+    <div>
+        <label for="">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="newProduct.productName" >
+    </div>
+    <div>
+        <label for="">Description</label>
+        <input type="text" class="form-control" [(ngModel)]="newProduct.description" >
+    </div>
+    <div>
+        <label for="">Price</label>
+        <input type="number" class="form-control" [(ngModel)]="newProduct.price">
+    </div>
+    <div>
+        <label for="">Categories</label>
+        <input type="text" class="form-control" [(ngModel)]="newProduct.category">
+    </div>
+    <!-- {{newProduct | json}} -->
+    <button class="btn btn-primary" style="margin-top: 5px;" (click)="onClickAddNewProduct()" >Submit</button>
+    <!-- <button class="btn btn-primary" style="margin-top: 5px;" >Submit</button> -->
+</div>

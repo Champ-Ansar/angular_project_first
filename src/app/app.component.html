@@ -4,5 +4,7 @@
   <!-- String Interpolation -->
   <!-- <h1>{{title}}</h1> -->
   <!-- <button class="btn btn-primary" (click)="onClickSubmit()" >Submit</button> -->
-  <app-product-list></app-product-list>
+   <app-add-new-product (sendDataEvent)="onClickAddNewProduct($event)" ></app-add-new-product>
+   
+  <app-product-list [allProducts]="products" ></app-product-list>
 </div>

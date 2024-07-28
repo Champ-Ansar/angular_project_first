@@ -36,13 +36,13 @@ export class NavbarComponent {
     }
 
     checkBlue(){
-        console.log(this.navbarColor === "#2A55E5");
+        // console.log(this.navbarColor === "#2A55E5");
         
         return this.navbarColor === "#2A55E5"; 
     }
     
     checkDark(){
-        console.log(this.navbarColor === "black");
+        // console.log(this.navbarColor === "black");
         return this.navbarColor === "black";
     }
 
