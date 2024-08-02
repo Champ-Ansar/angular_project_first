@@ -1,10 +1,10 @@
-<app-navbar></app-navbar>
-<div>
-
-  <!-- String Interpolation -->
-  <!-- <h1>{{title}}</h1> -->
-  <!-- <button class="btn btn-primary" (click)="onClickSubmit()" >Submit</button> -->
-   <app-add-new-product (sendDataEvent)="onClickAddNewProduct($event)" ></app-add-new-product>
-   
-  <app-product-list [allProducts]="products" ></app-product-list>
+<app-navbar (sendSearchEvent)="filterProducts($event)"></app-navbar>
+<div class="container">
+  
+  <div>
+    
+     <app-add-new-product (sendDataEvent)="onClickAddNewProduct($event)" ></app-add-new-product>
+     
+    <app-product-list [allProducts]="tempProducts" ></app-product-list>
+  </div>
 </div>

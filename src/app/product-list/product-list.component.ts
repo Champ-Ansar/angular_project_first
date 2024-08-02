@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../product';
+import { DataHandlerService } from '../data-handler.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +11,14 @@ export class ProductListComponent implements OnInit {
 
   search : string = "";
 
+  constructor(private dataHandler : DataHandlerService){
+    console.log(dataHandler.products);
+    
+  }
+  
+
   @Input() allProducts !: Product [];
+  @Output() sendSearchEvent = new EventEmitter<any>();
 
   // Passing Css to template
   styles  = {
@@ -44,14 +52,13 @@ export class ProductListComponent implements OnInit {
   //   // types: "costly"
   // };
 
-  constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSearch(event : any){
-    // console.log(event.target.value);
-    // this.search = event.target.value;
+  onSearch(event: any){
+    const typedValue = event.target.value;
+    this.sendSearchEvent.emit(typedValue);
   }
 
   checkProducts(){
@@ -61,10 +68,5 @@ export class ProductListComponent implements OnInit {
   checkProductPrice(price: number){    
     return price <= 40000
   }
-
-  // onClickAddNewProduct(){    
-  //   this.products.push(this.newProduct);
-  //   // return this.products;
-  // }
   
 }

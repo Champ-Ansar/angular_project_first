@@ -1,24 +1,16 @@
 <div class="container" style="margin-top: 20px;">
 
     
-    <input placeholder="Search..." [(ngModel)]="search" class="form-control" type="text" id=""
-        style="border: 1px solid black;">
-    <!-- <input 
-    placeholder="Search..." 
-    (input)="onSearch($event)"    
-    class="form-control" 
-    type="text" 
-    id="" 
-    [value]="search"
-    style="border: 1px solid black;" 
-    > -->
-    <p>{{search}}</p>
+    <!-- <input placeholder="Search..." [(ngModel)]="search" class="form-control" type="text" id=""
+        style="border: 1px solid black;"> -->
+    
+    
     <!-- {{iphone | json}} -->
     <div class="products">
         <div *ngIf="checkProducts()">
             <!-- No Products -->
             <h1 style="text-align: center;">No products Available</h1>
-        </div>
+        </div>      
         <!-- <div class="card" *ngFor="let product of products | customPipe:10000" [ngStyle]="styles" > -->
         <div class="card" *ngFor="let product of allProducts" [ngStyle]="styles">
             <!-- <div class="card" *ngFor="let product of products | slice:0:3" [ngStyle]="styles" > -->
@@ -39,7 +31,7 @@
                 <div style="margin-bottom: 5px;">
                     <span class="badge bg-primary">{{product.category}}</span>
                 </div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
             </div>
         </div>
 

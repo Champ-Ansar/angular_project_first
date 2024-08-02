@@ -25,6 +25,12 @@ export class AddNewProductComponent implements OnInit {
   onClickAddNewProduct()
   {
     this.sendDataEvent.emit(this.newProduct);
+    this.newProduct = {
+      productName: '',
+      description: '',
+      price: 0,
+      category: ''
+    }
   }
 
 }

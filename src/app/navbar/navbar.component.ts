@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'app-navbar',
@@ -21,6 +21,7 @@ export class NavbarComponent {
     navTitle :string = "Foodies"; 
     navbarColor : string = "#2A55E5"
     currDate = new Date();
+    @Output() sendSearchEvent = new EventEmitter<any>();
 
     constructor() {
         // console.log(this.currDate);
@@ -50,6 +51,10 @@ export class NavbarComponent {
         this.navbarColor = this.navbarColor === "#2A55E5" ? "black" : "#2A55E5";
     }
 
+    onSearch(event: any){
+        const typedValue = event.target.value;
+        this.sendSearchEvent.emit(typedValue);
+    }
 
     
 }
