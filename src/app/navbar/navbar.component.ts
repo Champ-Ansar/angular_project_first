@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { DataHandlerService } from "../data-handler.service";
 
 @Component({
     selector: 'app-navbar',
@@ -21,9 +22,10 @@ export class NavbarComponent {
     navTitle :string = "Foodies"; 
     navbarColor : string = "#2A55E5"
     currDate = new Date();
-    @Output() sendSearchEvent = new EventEmitter<any>();
+    cartCountNav:number = 0;
+    // @Output() sendSearchEvent = new EventEmitter<any>();
 
-    constructor() {
+    constructor(public dataHandler: DataHandlerService) {
         // console.log(this.currDate);
         
         // console.log("Navbar component");
@@ -32,7 +34,18 @@ export class NavbarComponent {
         // console.log(greet);
         // const storeName = "store";
         // console.log(this.storeName);
+        // this.cartCountNav = this.dataHandler.cartCount;
         
+
+    }
+
+    ngOnInit(){
+        this.cartCountNav = this.dataHandler.cartCount;
+
+    }
+
+    ngOnChanges(){
+        this.cartCountNav = this.dataHandler.cartCount;
 
     }
 
@@ -53,7 +66,7 @@ export class NavbarComponent {
 
     onSearch(event: any){
         const typedValue = event.target.value;
-        this.sendSearchEvent.emit(typedValue);
+        // this.sendSearchEvent.emit(typedValue);
     }
 
     

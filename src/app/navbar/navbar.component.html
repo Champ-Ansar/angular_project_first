@@ -32,15 +32,18 @@
         <p>{{currDate | date:"dd-MM-YY hh:mm a" }}</p>
         <!-- <p>{{currDate | date: "fullDate"}}</p> -->
         <!-- <p>{{currDate | date: "short"}}</p> -->
+        
         <input 
         placeholder="Search..." 
         class="form-control" 
         type="text" 
         (input)="onSearch($event)"
-        id="" 
         style="border: 1px solid black;" 
         >
-        <button class="btn btn-success" (click)="onClickToggle()">Toggle Theme</button>
+        <div>
+          <i class="bi bi-cart"></i>
+          <span class='badge badge-warning' id='lblCartCount'> {{dataHandler.cartCount}} </span>
+        </div>
       </div>
     </div>
   </nav>

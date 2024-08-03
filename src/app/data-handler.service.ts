@@ -8,6 +8,7 @@ export class DataHandlerService {
 
   constructor() { }
 
+  cartCount: number = 0;
   products: Product[] = [
     {
       productName : "iphone",

@@ -10,15 +10,20 @@ import { DataHandlerService } from '../data-handler.service';
 export class ProductListComponent implements OnInit {
 
   search : string = "";
+  allProducts!: Product[];
 
   constructor(private dataHandler : DataHandlerService){
     console.log(dataHandler.products);
     
   }
+
+  ngOnInit(){
+    this.allProducts = this.dataHandler.products;
+  }
   
 
-  @Input() allProducts !: Product [];
-  @Output() sendSearchEvent = new EventEmitter<any>();
+  // @Input() allProducts !: Product [];
+  // @Output() sendSearchEvent = new EventEmitter<any>();
 
   // Passing Css to template
   styles  = {
@@ -52,13 +57,9 @@ export class ProductListComponent implements OnInit {
   //   // types: "costly"
   // };
 
-
-  ngOnInit(): void {
-  }
-
   onSearch(event: any){
     const typedValue = event.target.value;
-    this.sendSearchEvent.emit(typedValue);
+    // this.sendSearchEvent.emit(typedValue);
   }
 
   checkProducts(){
@@ -69,4 +70,10 @@ export class ProductListComponent implements OnInit {
     return price <= 40000
   }
   
+  onClickAddToCart(){
+    ++this.dataHandler.cartCount;
+    console.log(this.dataHandler.cartCount);
+    
+  }
+
 }
