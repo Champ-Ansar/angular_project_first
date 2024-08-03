@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { DataHandlerService } from "../data-handler.service";
+import { Product } from "../product";
 
 @Component({
     selector: 'app-navbar',
@@ -22,16 +24,11 @@ export class NavbarComponent {
     navbarColor : string = "#2A55E5"
     currDate = new Date();
     @Output() sendSearchEvent = new EventEmitter<any>();
-
-    constructor() {
+    // tempData !: Product[];
+    allProducts !: any;
+    constructor(private dataHandler: DataHandlerService) {
         // console.log(this.currDate);
-        
-        // console.log("Navbar component");
-        // const name = "Ansar";
-        // const greet = `Welcome to Itvedant, ${name}`;
-        // console.log(greet);
-        // const storeName = "store";
-        // console.log(this.storeName);
+        this.allProducts = dataHandler.products;
         
 
     }
@@ -52,8 +49,12 @@ export class NavbarComponent {
     }
 
     onSearch(event: any){
+        
         const typedValue = event.target.value;
-        this.sendSearchEvent.emit(typedValue);
+        
+        this.dataHandler.products = this.allProducts.filter((product : any)=>{
+            return product.productName.includes(typedValue);
+        })
     }
 
     

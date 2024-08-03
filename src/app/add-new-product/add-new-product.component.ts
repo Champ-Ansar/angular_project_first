@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../product';
+import { DataHandlerService } from '../data-handler.service';
 
 @Component({
   selector: 'app-add-new-product',
@@ -8,7 +9,7 @@ import { Product } from '../product';
 })
 export class AddNewProductComponent implements OnInit {
 
-  @Output() sendDataEvent = new EventEmitter<any>();
+  // @Output() sendDataEvent = new EventEmitter<any>();
 
   newProduct: Product = {
     productName: '',
@@ -17,14 +18,15 @@ export class AddNewProductComponent implements OnInit {
     category: ''
   }
 
-  constructor() { }
+  constructor(private dataHandler: DataHandlerService) { }
 
   ngOnInit(): void {
   }
 
   onClickAddNewProduct()
   {
-    this.sendDataEvent.emit(this.newProduct);
+    // this.sendDataEvent.emit(this.newProduct);
+    this.dataHandler.products.push(this.newProduct);
     this.newProduct = {
       productName: '',
       description: '',

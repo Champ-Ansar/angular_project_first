@@ -11,13 +11,20 @@ export class ProductListComponent implements OnInit {
 
   search : string = "";
 
+  allProducts !: Product[];
   constructor(private dataHandler : DataHandlerService){
-    console.log(dataHandler.products);
+    // console.log(dataHandler.products);
+    this.allProducts = dataHandler.products;
     
+  }
+
+  ngDoCheck(){
+    this.allProducts = this.dataHandler.products;
+    console.log(this.allProducts);
   }
   
 
-  @Input() allProducts !: Product [];
+  // @Input() allProducts !: Product [];
   @Output() sendSearchEvent = new EventEmitter<any>();
 
   // Passing Css to template
