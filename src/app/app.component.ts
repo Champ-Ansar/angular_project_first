@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title !: string;
-    
+
   async getData(){
-    const api =await fetch('https://fakestoreapi.com/products');
-    return api.json();
+    const api = await fetch('https://fakestoreapi.com/products');
+    return api.json 
   }
 
   ngOnInit(){
