@@ -26,7 +26,7 @@ export class NavbarComponent {
     @Output() sendSearchEvent = new EventEmitter<any>();
     // tempData !: Product[];
     allProducts !: any;
-    constructor(private dataHandler: DataHandlerService) {
+    constructor(public dataHandler: DataHandlerService) {
         // console.log(this.currDate);
         this.allProducts = dataHandler.products;
         

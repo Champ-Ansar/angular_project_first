@@ -75,5 +75,9 @@ export class ProductListComponent implements OnInit {
   checkProductPrice(price: number){    
     return price <= 40000
   }
+
+  onClickAddToCart(){
+    this.dataHandler.cartCount++;
+  }
   
 }

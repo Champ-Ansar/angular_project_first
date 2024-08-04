@@ -1,46 +1,48 @@
-<nav
- [ngClass]="{dark: checkDark(), bluebg: checkBlue()}" 
- class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">{{navTitle}}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <p>{{currDate | date:"dd-MM-YY hh:mm a" }}</p>
-        <!-- <p>{{currDate | date: "fullDate"}}</p> -->
-        <!-- <p>{{currDate | date: "short"}}</p> -->
-        <input 
-        placeholder="Search..." 
-        class="form-control" 
-        type="text" 
-        (input)="onSearch($event)"
-        id="" 
-        style="border: 1px solid black;" 
-        >
-        <button class="btn btn-success" (click)="onClickToggle()">Toggle Theme</button>
+<nav [ngClass]="{dark: checkDark(), bluebg: checkBlue()}" class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{navTitle}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <p>{{currDate | date:"dd-MM-YY hh:mm a" }}</p>
+      <!-- <p>{{currDate | date: "fullDate"}}</p> -->
+      <!-- <p>{{currDate | date: "short"}}</p> -->
+      <input placeholder="Search..." class="form-control" type="text" (input)="onSearch($event)" id=""
+        style="border: 1px solid black;">
+      <!-- <button class="btn btn-success" (click)="onClickToggle()">Toggle Theme</button> -->
+      <div style="margin-left: 10px;" >
+        <button type="button" class="btn btn-primary">
+           <span class="badge text-bg-danger">{{dataHandler.cartCount}}</span>
+           <i class="bi bi-cart-dash-fill"></i>
+        </button>
+        
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
