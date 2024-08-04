@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from './product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,16 @@ import { Product } from './product';
 })
 export class AppComponent {
   title !: string;
+    
+  async getData(){
+    const api =await fetch('https://fakestoreapi.com/products');
+    return api.json();
+  }
+
+  ngOnInit(){
+    const api = fetch('https://fakestoreapi.com/products');
+    console.log(this.getData());
+  }
 
   tempProducts !: any;
 

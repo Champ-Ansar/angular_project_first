@@ -13,14 +13,12 @@ export class ProductListComponent implements OnInit {
 
   allProducts !: Product[];
   constructor(private dataHandler : DataHandlerService){
-    // console.log(dataHandler.products);
-    this.allProducts = dataHandler.products;
-    
+  this.allProducts = dataHandler.products;
   }
 
   ngDoCheck(){
     this.allProducts = this.dataHandler.products;
-    console.log(this.allProducts);
+    // console.log(this.allProducts);
   }
   
 
