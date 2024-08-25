@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
 
   ngDoCheck(){
     this.allProducts = this.dataHandler.products;
-    console.log(this.allProducts);
+    // console.log(this.allProducts);
   }
   
 

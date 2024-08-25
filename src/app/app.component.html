@@ -1,7 +1,12 @@
 <app-navbar ></app-navbar>
 <div class="container">
   <div>
-    <app-add-new-product></app-add-new-product>
-    <app-product-list></app-product-list>
+    <ng-container *ngIf="showSpinner">
+      <app-spinner></app-spinner>
+    </ng-container>
+    <ng-container *ngIf="!showSpinner">
+      <app-add-new-product></app-add-new-product>
+      <app-product-list></app-product-list>
+    </ng-container>
   </div>
 </div>

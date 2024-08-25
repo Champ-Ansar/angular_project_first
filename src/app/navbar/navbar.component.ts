@@ -23,6 +23,8 @@ export class NavbarComponent {
     navTitle :string = "Foodies"; 
     navbarColor : string = "#2A55E5"
     currDate = new Date();
+
+    showDropdownVar :boolean = false;
     @Output() sendSearchEvent = new EventEmitter<any>();
     // tempData !: Product[];
     allProducts !: any;
@@ -57,5 +59,7 @@ export class NavbarComponent {
         })
     }
 
-    
+    showDropdown(){
+        this.showDropdownVar = !this.showDropdownVar;
+    }
 }

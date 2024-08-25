@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { CustomPipePipe } from './custom-pipe.pipe';
 import { SearchProductsPipe } from './search-products.pipe';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import { DropdownShowDirective } from './dropdown-show.directive';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
     ProductListComponent,
     CustomPipePipe,
     SearchProductsPipe,
-    AddNewProductComponent
+    AddNewProductComponent,
+    DropdownShowDirective,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
